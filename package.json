@@ -16,6 +16,7 @@
     "assemblyai": "^4.34.4",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "googleapis": "^173.0.0",
     "groq-sdk": "^1.2.1",
     "twilio": "^6.0.2"
   },
