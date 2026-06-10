@@ -1,6 +1,17 @@
 import { Request, Response } from "express";
-const transcribeHandler=(req:Request,res:Response)=>{
-    console.log(req.body);
+
+export const transcribeHandler=async (req:Request,res:Response)=>{
+    const {audioUrl}=req.body;
+
+    if(!audioUrl)
+    {
+        return res.status(400).json({
+            error:"provide Audio Url"
+        })
+    }
+
+    //todo:call assembly api service
+    return res.status(200).json({ transcript: "transcribed text here" });
+    
 }
 
-export default transcribeHandler;
