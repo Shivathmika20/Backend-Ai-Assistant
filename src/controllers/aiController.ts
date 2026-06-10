@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 export const processHandler=async (req:Request,res:Response)=>{
-    const {transcribedText,prompt}=req.body;
+    const {transcribedText}=req.body;
 
     if(!transcribedText){
         return res.status(400).json({
