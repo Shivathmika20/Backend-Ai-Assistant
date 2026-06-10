@@ -8,10 +8,10 @@ import gdriveRouter from "./routes/gdrive-route";
 const app=express();
 
 app.use(express.json());
-app.use('api',twilioRouter);
-app.use('api',assemblyRouter);
-app.use('api',aiProcessRouter);
-app.use('api',gdriveRouter);
+app.use('/api',twilioRouter);
+app.use('/api',assemblyRouter);
+app.use('/api',aiProcessRouter);
+app.use('/api',gdriveRouter);
 
 
 app.get('/',(req,res)=>{
