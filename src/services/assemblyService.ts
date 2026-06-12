@@ -6,6 +6,7 @@ const client=new AssemblyAI({apiKey:config.ASSEMBLYAI_API_KEY});
 export const transcribeAudio=async(audioUrl:string)=>{
     const transcript=await client.transcripts.transcribe({
         audio:audioUrl,
+        language_code: "en"  
     });
 
     if(transcript.status==="error"){
