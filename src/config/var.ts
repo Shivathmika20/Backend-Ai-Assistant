@@ -18,7 +18,9 @@ export const config = {
     GROQ_API_KEY: process.env.GROQ_API_KEY || "",
 
     // Google
-    GOOGLE_CLIENT_EMAIL: process.env.GOOGLE_CLIENT_EMAIL || "",
-    GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY || "",
     GOOGLE_DRIVE_FOLDER_ID: process.env.GOOGLE_DRIVE_FOLDER_ID || "",
+    GOOGLE_CLIENT_ID:process.env.GOOGLE_CLIENT_ID || "",
+    GOOGLE_CLIENT_SECRET:process.env.GOOGLE_CLIENT_SECRET || "",
+    GOOGLE_REFRESH_TOKEN:process.env.GOOGLE_REFRESH_TOKEN || "",
+    MY_GOOGLE_EMAIL: process.env.MY_GOOGLE_EMAIL || ""
 }
