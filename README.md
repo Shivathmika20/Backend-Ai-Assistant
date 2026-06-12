@@ -1,8 +1,30 @@
-# 🎙️ Voice-to-Drive AI Assistant
+# Voice-to-Drive AI Assistant
 
 A voice-powered AI assistant that transcribes your calls, structures the content using AI, and saves it as a formatted Google Doc , then notifies you via SMS.
 
-## 🔁 Flow
+## Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Backend | Node.js + Express + TypeScript |
+| Calling | Twilio |
+| Transcription | AssemblyAI |
+| AI Processing | Groq (Llama 3) |
+| Storage | Google Docs + Drive API |
+| Tunneling | ngrok (development) |
+
+## Features
+
+- 🎙️ Voice transcription using AssemblyAI
+- 🤖 AI-powered content structuring with Groq
+- 📄 Automatic Google Docs generation
+- 📱 SMS notifications via Twilio
+- 🔗 Webhook-based call handling
+- ⚡ Built with TypeScript and Express
+
+---
+
+## Flow
 User calls Twilio number
 
 ↓
@@ -21,44 +43,32 @@ Saved as Google Doc in your Drive
 
 SMS notification sent with doc link
 
-## 🧱 Tech Stack
 
-| Layer | Tool |
-|---|---|
-| Backend | Node.js + Express + TypeScript |
-| Calling | Twilio |
-| Transcription | AssemblyAI |
-| AI Processing | Groq (Llama 3) |
-| Storage | Google Docs + Drive API |
-| Tunneling | ngrok (development) |
+## Project Structure
 
-## 📁 Project Structure
-
+```text
 src/
+│
+├── controllers/
+│   └── twilioController.ts      # Orchestrates the complete workflow
+│
+├── services/
+│   ├── assemblyService.ts       # Voice transcription
+│   ├── groqService.ts           # AI content structuring
+│   ├── gdriveService.ts         # Google Docs creation
+│   └── twilioService.ts         # SMS notifications
+│
+├── routes/
+│   └── twilio-route.ts          # API routes
+│
+├── config/
+│   ├── var.ts                   # Environment variables
+│   └── getToken.ts              # Google OAuth token generation
+│
+└── index.ts                     # Express server entry point
+```
 
-controllers/
-
-twilioController.ts   → orchestrates full pipeline
-
-services/
-
-assemblyService.ts    → voice transcription
-
-groqService.ts        → AI content structuring
-
-gdriveService.ts      → Google Doc creation
-
-twilioService.ts      → SMS notification
-
-routes/
-
-twilio-route.ts       → API routes
-
-config/
-
-var.ts                → environment config
-
-index.ts                → Express server entry point
+---
 
 ## ⚙️ Setup
 
@@ -114,17 +124,20 @@ ngrok http 3000
 
 Update your Twilio webhook with the new ngrok URL.
 
-## 🔌 API Routes
+---
+
+## API Routes
 
 | Method | Route | Description |
 |---|---|---|
 | POST | /api/twilio/answer | Handles incoming call, starts recording |
 | POST | /api/twilio/callback | Receives recording, triggers pipeline |
-| POST | /api/twilio/notify | Sends SMS notification |
 
-## 🔑 Environment Variables
+## Environment Variables
 
 See `.env.example` for all required variables.
+
+--- 
 
 ## 🚀 Roadmap
 
@@ -133,6 +146,8 @@ See `.env.example` for all required variables.
 - [ ] v2 — Frontend dashboard (Next.js)
 - [ ] v2 — Database layer (Supabase)
 - [ ] v2 — Real-time transcription
+
+--- 
 
 ## 👩‍💻 Built by
 
