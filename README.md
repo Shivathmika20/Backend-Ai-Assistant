@@ -1,6 +1,6 @@
 # 🎙️ Voice-to-Drive AI Assistant
 
-A voice-powered AI assistant that transcribes your calls, structures the content using AI, and saves it as a formatted Google Doc — then notifies you via SMS.
+A voice-powered AI assistant that transcribes your calls, structures the content using AI, and saves it as a formatted Google Doc , then notifies you via SMS.
 
 ## 🔁 Flow
 User calls Twilio number
