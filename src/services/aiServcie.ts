@@ -6,7 +6,7 @@ const groqClient=new Groq({apiKey:config.GROQ_API_KEY});
 export const processText=async (transcript:string)=>{
 
     const chatCompletion = await groqClient.chat.completions.create({
-        model:"llama3-8b-8192",
+        model:"llama-3.1-8b-instant",
         messages: [
             { role: "system", content: "You are a content assistant. Structure the following transcript into a clean document with a Title, Summary, Key Points, and Action Items." },
             { role: "user", content: transcript }
