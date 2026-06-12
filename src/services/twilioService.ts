@@ -1,5 +1,6 @@
 import { Twilio } from "twilio";
 import {config} from "../config/var"
+
 const client=new Twilio(config.TWILIO_ACCOUNT_SID,config.TWILIO_AUTH_TOKEN)
 
 export const sendSMS=async(docLink:string)=>{
@@ -10,11 +11,12 @@ export const sendSMS=async(docLink:string)=>{
         to:config.MY_PHONE_NUMBER
     });
 
-    console.log(`Success! Message Sent. SID: ${message.sid}`)
+    
     return message.sid; // confirms SMS was sent
    }
-   catch(e){
-    console.error(`Failed to send message: ${e}`);
-   }
+   catch(e: any) {
+    console.error("Twilio SMS Error:", e.message);
+    console.error("Twilio Status:", e.status);
+}
 
 }
