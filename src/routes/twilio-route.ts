@@ -1,9 +1,9 @@
 import  { Router } from "express";
-import {callbackHandler,notifyHandler} from "../controllers/twilioController";
+import {callAnswer, callbackHandler} from "../controllers/twilioController";
 const twilioRouter=Router();
 
 twilioRouter.post("/twilio/callback",callbackHandler);
-twilioRouter.post("/twilio/notify",notifyHandler);
+twilioRouter.post("/twilio/answer",callAnswer);
 
 
 export default twilioRouter;
